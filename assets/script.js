@@ -180,6 +180,40 @@ const STORIES = {
       <span class="pullquote">กำแพงเมืองและประตูเดิมถูกรื้อในปี 1927 — แต่ความเป็นใจกลางของฉงชิ่งไม่เคยหายไป</span>
       <p>ทุกวันตรุษจีน คนท้องถิ่นยังคงมารวมตัวที่นี่เพื่อชมพระอาทิตย์ขึ้นวันแรกของปีสะท้อนบนแม่น้ำทั้งสอง — ประเพณีที่สืบต่อมาตั้งแต่ราชวงศ์โบราณ</p>`
   },
+  angela: {
+    title: 'Angela · Angel Homestay',
+    titleCn: '高层江景民宿 · Jiefangbei Hongyadong Branch',
+    stamp: '宿', era: 'คืน 1 · 2 · 27-29 ก.ค.',
+    image: 'assets/images/rs_hongyadong.jpg',
+    map: 'https://www.google.com/maps/search/?api=1&query=Angela+Angel+High+Rise+Homestay+Hongyadong+Chongqing',
+    facts: [
+      ['Nights', '27-29 ก.ค. (2 คืน)'], ['Style', 'Apartment Homestay'],
+      ['Walk to Hongyadong', '5 นาที'], ['Walk to Jiefangbei', '8 นาที']
+    ],
+    text: `
+      <p><strong>Angela · Angel High-rise River View Homestay</strong> เป็นห้องชุดสไตล์ Apartment ในตึกสูงใกล้ Hongyadong — เจ้าของห้องชาวจีนเปิดให้นักท่องเที่ยวเช่าผ่าน Booking.com, Trip.com และ Airbnb · เป็นรูปแบบ "民宿 (Mínsù)" ที่กำลังมาแรงในจีน — เหมือน Hotel แต่บรรยากาศบ้านมากกว่า</p>
+      <p>ตั้งอยู่ที่ <em>สาขา Jiefangbei Hongyadong</em> — เดิน 5 นาทีถึง Hongyadong เปิดไฟ และ 8 นาทีถึง Jiefangbei CBD · มี Metro Xiaoshizi (Line 1/2/6) อยู่ใกล้ ๆ</p>
+      <span class="pullquote">ทำไมเลือกที่นี่ 2 คืนแรก: ทันทีที่ถึงจากเที่ยวบินกลางคืน เดินไปลงทุนที่ Hongyadong กลางคืนได้ง่าย ไม่ต้องนั่งรถไกล</span>
+      <p><strong>ขั้นตอน Check-in:</strong> Booking แล้ว Host จะส่ง WeChat / Phone Number มาให้ · แจ้งเวลามาถึงล่วงหน้า · ส่วนใหญ่ใช้ Smart Lock ส่งรหัสประตูทาง WeChat · เผื่อเงินสด ~200¥ มัดจำ (押金) คืนตอน Check-out</p>
+      <p><strong>สิ่งที่ควรเตรียม:</strong> ปลั๊กแปลง 3 ขา (จีนใช้ Type A/I) · Adapter Type C สำหรับ HDMI ถ้าจะดู Netflix ผ่าน TV · ที่นี่บางตึกล็อกบางช่อง YouTube/Google ในห้องน้ำที่มีน้ำร้อน Geyser ก๊าซ</p>`
+  },
+  yicheng: {
+    title: 'Yicheng High Altitude',
+    titleCn: '宜程高层江景 · River View Chongqing',
+    stamp: '宿', era: 'คืน 3 · 4 · 29-31 ก.ค.',
+    image: 'assets/images/rs_skyline.jpg',
+    map: 'https://www.google.com/maps/search/?api=1&query=Yicheng+High+Altitude+River+View+Chongqing',
+    facts: [
+      ['Nights', '29-31 ก.ค. (2 คืน)'], ['Style', 'High-rise Apartment'],
+      ['View', 'แม่น้ำสองสาย Panorama'], ['Floor', 'ตึกสูง 30+ ชั้น']
+    ],
+    text: `
+      <p><strong>Yicheng High Altitude River View Chongqing</strong> เป็น Service Apartment ในตึกสูง — Yicheng (宜程) เป็นแบรนด์ Apartment-Hotel ที่นิยมในจีน · เน้นห้องชั้นบนของตึก 30+ ชั้น พร้อมหน้าต่างเต็มผนังเห็นวิวแม่น้ำแยงซีและเจียหลิงพาโนรามา</p>
+      <p>เหมาะกับ <em>คืน 3-4 ของทริป</em> เพราะหลังกลับจาก Wulong Day Trip ใช้เวลานั่งรถไฟไป-กลับเหนื่อยมาก — ต้องการห้องที่เงียบ วิวดี และอาบน้ำร้อนได้สบาย ๆ</p>
+      <span class="pullquote">ทำไมเลือกที่นี่ 2 คืนหลัง: วิวที่ดีที่สุดสำหรับช่วงเช้า — Sunrise สะท้อนแม่น้ำ — และค่ำคืนที่เห็น Hongyadong + Raffles ติดไฟพร้อมกัน</span>
+      <p><strong>สิ่งอำนวยความสะดวก:</strong> เครื่องชงกาแฟ Capsule · กาน้ำร้อน · เครื่องซักผ้า (บางห้อง) · WiFi ความเร็วสูง · เครื่องปรับอากาศ Inverter</p>
+      <p><strong>ทริค:</strong> ขอห้องที่ <em>หันออกแม่น้ำ</em> (江景房 jiāngjǐng fáng) — ตอนจองให้ระบุชัด · บางคนถูกจัดให้หันออกตึกอื่น เสียค่าวิวเปล่า ๆ</p>`
+  },
   cableway: {
     title: 'Yangtze Cableway',
     titleCn: '长江索道 · กระเช้าโบราณ',

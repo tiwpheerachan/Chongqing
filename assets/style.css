@@ -2126,6 +2126,426 @@ ul, ol { list-style: none; }
 }
 
 /* ================================================================
+   DAY INTRO — "Today's Route" callout
+   ================================================================ */
+.day-intro {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  margin: 0 0 clamp(40px, 5vw, 60px);
+  padding: 24px 28px;
+  background:
+    radial-gradient(ellipse 80% 100% at 0% 0%, rgba(184, 149, 74, 0.08), transparent 60%),
+    linear-gradient(135deg, var(--paper-cool) 0%, var(--mint-mist) 100%);
+  border: 1px solid rgba(184, 149, 74, 0.28);
+  border-radius: 16px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-1);
+}
+.day-intro::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 4px;
+  background: linear-gradient(180deg, var(--gold-light), var(--gold), var(--gold-deep));
+}
+.day-intro::after {
+  content: '路';
+  position: absolute;
+  bottom: -20px;
+  right: -10px;
+  font-family: var(--font-cn);
+  font-weight: 900;
+  font-size: 8rem;
+  color: rgba(184, 149, 74, 0.05);
+  pointer-events: none;
+}
+.day-intro-icon {
+  width: 56px;
+  height: 56px;
+  flex-shrink: 0;
+  background: linear-gradient(135deg, var(--jade-deep), var(--jade));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold-light);
+  box-shadow:
+    0 4px 12px rgba(15, 58, 54, 0.2),
+    inset 0 0 0 2px rgba(184, 149, 74, 0.3);
+}
+.day-intro-icon svg { width: 28px; height: 28px; }
+.day-intro-text { flex: 1; }
+.day-intro-label {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+.day-intro-text p {
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--ink-soft);
+  margin: 0;
+}
+.day-intro-text strong {
+  color: var(--jade-deep);
+  font-weight: 600;
+}
+
+/* Schedule date label (under time) */
+.schedule-date {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.08em;
+  color: var(--vermilion);
+  margin-top: 2px;
+}
+
+/* ================================================================
+   HOTELS
+   ================================================================ */
+.hotels-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(20px, 3vw, 32px);
+  margin-bottom: clamp(40px, 5vw, 60px);
+}
+.hotel-card {
+  background: var(--paper);
+  border: 1px solid rgba(184, 149, 74, 0.25);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: var(--shadow-2);
+  transition: transform 0.6s var(--ease-out), box-shadow 0.6s var(--ease);
+  display: flex;
+  flex-direction: column;
+}
+.hotel-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-3);
+}
+.hotel-cover {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  background-size: cover;
+  background-position: center;
+  background-color: var(--jade);
+}
+.hotel-cover-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(15, 58, 54, 0.15) 0%, rgba(15, 58, 54, 0.85) 100%);
+}
+.hotel-cover-content {
+  position: absolute;
+  inset: 0;
+  padding: 24px 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  color: var(--cream);
+}
+.hotel-nights {
+  align-self: flex-start;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  background: linear-gradient(135deg, var(--vermilion), #9D2E1F);
+  color: var(--cream);
+  padding: 5px 12px;
+  border-radius: 999px;
+  margin-bottom: 14px;
+  box-shadow: 0 4px 12px rgba(184, 61, 42, 0.3);
+}
+.hotel-name {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(28px, 3vw, 38px);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin-bottom: 4px;
+  background: linear-gradient(135deg, var(--cream), var(--gold-glow));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.hotel-name-sub {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 0.95rem;
+  color: rgba(245, 239, 226, 0.85);
+  margin-bottom: 6px;
+}
+.hotel-loc {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.08em;
+  color: var(--gold-light);
+}
+.hotel-body {
+  padding: 24px 28px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  flex: 1;
+}
+.hotel-facts {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px 18px;
+}
+.hotel-fact {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  font-size: 13px;
+  color: var(--ink-soft);
+  line-height: 1.45;
+}
+.hotel-fact > span {
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--gold-mist);
+  border-radius: 50%;
+  color: var(--gold-deep);
+}
+.hotel-fact > span svg { width: 14px; height: 14px; }
+.hotel-fact strong {
+  font-weight: 600;
+  color: var(--jade-deep);
+  font-size: 11.5px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.hotel-desc {
+  font-size: 14.5px;
+  line-height: 1.7;
+  color: var(--ink-soft);
+}
+.hotel-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding-top: 14px;
+  border-top: 1px dashed rgba(184, 149, 74, 0.28);
+  margin-top: auto;
+}
+
+/* ================================================================
+   MOTORCYCLE SECTION
+   ================================================================ */
+.moto-section {
+  position: relative;
+  overflow: hidden;
+  color: var(--cream);
+  padding: clamp(100px, 14vw, 200px) 0;
+  isolation: isolate;
+}
+.moto-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  z-index: -2;
+  filter: brightness(0.4) saturate(1.1) blur(2px);
+  transform: scale(1.05);
+}
+.moto-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(ellipse 80% 60% at 30% 30%, rgba(63, 168, 156, 0.25), transparent 60%),
+    radial-gradient(ellipse 60% 50% at 80% 80%, rgba(184, 149, 74, 0.25), transparent 60%),
+    linear-gradient(135deg, rgba(10, 36, 33, 0.92) 0%, rgba(15, 58, 54, 0.85) 100%);
+}
+.moto-container { position: relative; z-index: 1; }
+
+.moto-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 20px;
+  background: linear-gradient(135deg, var(--vermilion), #9D2E1F);
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--cream);
+  margin-bottom: 28px;
+  box-shadow:
+    0 4px 16px rgba(184, 61, 42, 0.5),
+    0 0 0 2px rgba(184, 61, 42, 0.2);
+  animation: tag-glow 2.4s ease-in-out infinite;
+}
+.moto-tag svg { width: 16px; height: 16px; }
+@keyframes tag-glow {
+  0%, 100% { box-shadow: 0 4px 16px rgba(184, 61, 42, 0.5), 0 0 0 2px rgba(184, 61, 42, 0.2); }
+  50% { box-shadow: 0 4px 24px rgba(184, 61, 42, 0.7), 0 0 0 6px rgba(184, 61, 42, 0.15); }
+}
+
+.moto-title {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(38px, 6vw, 78px);
+  line-height: 1;
+  letter-spacing: -0.025em;
+  color: var(--cream);
+  margin-bottom: 10px;
+}
+.moto-titlecn {
+  font-family: var(--font-cn);
+  font-weight: 700;
+  font-size: clamp(20px, 2.4vw, 30px);
+  background: linear-gradient(135deg, var(--gold-light), var(--gold-glow));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  letter-spacing: 0.1em;
+  margin-bottom: 28px;
+}
+.moto-lede {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(17px, 1.7vw, 22px);
+  line-height: 1.6;
+  color: rgba(245, 239, 226, 0.92);
+  max-width: 720px;
+  margin-bottom: 56px;
+}
+
+.moto-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-bottom: 56px;
+}
+.moto-spot {
+  position: relative;
+  background: rgba(15, 58, 54, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(184, 149, 74, 0.3);
+  border-radius: 14px;
+  padding: 22px 24px;
+  transition: transform 0.5s var(--ease-out), border-color 0.4s var(--ease);
+}
+.moto-spot:hover {
+  transform: translateY(-4px);
+  border-color: var(--gold);
+}
+.moto-spot-num {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 500;
+  line-height: 1;
+  color: var(--gold-light);
+  margin-bottom: 8px;
+  letter-spacing: -0.02em;
+}
+.moto-spot h4 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 1.2rem;
+  color: var(--cream);
+  margin-bottom: 10px;
+  letter-spacing: -0.01em;
+}
+.moto-spot p {
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: rgba(245, 239, 226, 0.82);
+  margin-bottom: 12px;
+}
+.moto-spot a {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  color: var(--gold-light);
+  letter-spacing: 0.04em;
+}
+.moto-spot a:hover { color: var(--gold-glow); }
+
+.moto-tips {
+  background: rgba(245, 239, 226, 0.06);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(184, 149, 74, 0.25);
+  border-radius: 20px;
+  padding: 36px clamp(24px, 4vw, 48px);
+  margin-bottom: 32px;
+}
+.moto-tips h3 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(22px, 2.4vw, 30px);
+  letter-spacing: -0.01em;
+  color: var(--gold-light);
+  margin-bottom: 28px;
+  text-align: center;
+}
+.moto-tips-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+.moto-tip {
+  text-align: left;
+  padding: 18px;
+  background: rgba(10, 36, 33, 0.4);
+  border-radius: 12px;
+  border: 1px solid rgba(184, 149, 74, 0.15);
+}
+.moto-tip-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: linear-gradient(135deg, var(--gold), var(--gold-deep));
+  border-radius: 50%;
+  color: var(--ink);
+  margin-bottom: 12px;
+}
+.moto-tip-icon svg { width: 18px; height: 18px; }
+.moto-tip strong {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 1rem;
+  color: var(--cream);
+  margin-bottom: 6px;
+}
+.moto-tip p {
+  font-size: 13px;
+  line-height: 1.6;
+  color: rgba(245, 239, 226, 0.78);
+  margin: 0;
+}
+
+.moto-hashtag {
+  font-family: var(--font-mono);
+  font-size: 0.84rem;
+  text-align: center;
+  color: var(--gold-light);
+  letter-spacing: 0.1em;
+  padding-top: 24px;
+  border-top: 1px solid rgba(184, 149, 74, 0.18);
+}
+
+/* ================================================================
    PLACE ACTIONS (Story btn + Map link row)
    ================================================================ */
 .place-actions {
@@ -2543,6 +2963,8 @@ body.modal-open { overflow: hidden; }
   .food-content.active { grid-template-columns: 1fr; }
   .food-image { aspect-ratio: 16/10; max-height: 360px; }
   .tips-grid { grid-template-columns: 1fr; }
+  .hotels-grid { grid-template-columns: 1fr; }
+  .moto-tips-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 720px) {
@@ -2823,6 +3245,60 @@ body.modal-open { overflow: hidden; }
 
   /* Hide culture deco on small screens to save perf */
   .culture-koi, .culture-crane { display: none; }
+
+  /* Day intro */
+  .day-intro {
+    padding: 18px 18px;
+    gap: 14px;
+    margin-bottom: 28px;
+    border-radius: 12px;
+  }
+  .day-intro-icon { width: 44px; height: 44px; }
+  .day-intro-icon svg { width: 22px; height: 22px; }
+  .day-intro-text p { font-size: 13.5px; line-height: 1.65; }
+  .day-intro-label { font-size: 0.66rem; margin-bottom: 5px; }
+  .day-intro::after { font-size: 5rem; }
+
+  /* Schedule date */
+  .schedule-date { font-size: 0.6rem; }
+
+  /* Hotels */
+  .hotel-card { border-radius: 14px; }
+  .hotel-cover { aspect-ratio: 16/9; }
+  .hotel-cover-content { padding: 16px 18px; }
+  .hotel-nights { font-size: 0.62rem; padding: 4px 10px; margin-bottom: 10px; }
+  .hotel-name { font-size: 1.5rem; }
+  .hotel-name-sub { font-size: 0.82rem; }
+  .hotel-loc { font-size: 0.66rem; }
+  .hotel-body { padding: 18px 20px 22px; gap: 14px; }
+  .hotel-facts { gap: 10px 12px; }
+  .hotel-fact { font-size: 12px; gap: 8px; }
+  .hotel-fact > span { width: 26px; height: 26px; }
+  .hotel-fact > span svg { width: 12px; height: 12px; }
+  .hotel-fact strong { font-size: 10.5px; }
+  .hotel-desc { font-size: 13.5px; line-height: 1.6; }
+
+  /* Moto */
+  .moto-section { padding: 64px 0; }
+  .moto-tag { padding: 7px 14px; font-size: 0.62rem; margin-bottom: 18px; }
+  .moto-tag svg { width: 13px; height: 13px; }
+  .moto-title { font-size: 2.2rem; margin-bottom: 6px; }
+  .moto-titlecn { font-size: 1.05rem; margin-bottom: 18px; }
+  .moto-lede { font-size: 15px; margin-bottom: 32px; }
+  .moto-grid { grid-template-columns: 1fr; gap: 12px; margin-bottom: 32px; }
+  .moto-spot { padding: 16px 18px; border-radius: 12px; }
+  .moto-spot-num { font-size: 1.8rem; margin-bottom: 4px; }
+  .moto-spot h4 { font-size: 1.02rem; margin-bottom: 6px; }
+  .moto-spot p { font-size: 13px; margin-bottom: 8px; line-height: 1.55; }
+  .moto-tips { padding: 24px 18px; border-radius: 14px; }
+  .moto-tips h3 { font-size: 1.25rem; margin-bottom: 18px; }
+  .moto-tips-grid { grid-template-columns: 1fr; gap: 10px; }
+  .moto-tip { padding: 14px; border-radius: 10px; }
+  .moto-tip-icon { width: 30px; height: 30px; margin-bottom: 8px; }
+  .moto-tip-icon svg { width: 15px; height: 15px; }
+  .moto-tip strong { font-size: 0.92rem; }
+  .moto-tip p { font-size: 12px; }
+  .moto-hashtag { font-size: 0.7rem; padding-top: 16px; letter-spacing: 0.06em; }
 }
 
 @media (max-width: 380px) {
