@@ -2546,6 +2546,243 @@ ul, ol { list-style: none; }
 }
 
 /* ================================================================
+   SECRET SPOTS · 秘境
+   ================================================================ */
+.secret-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: clamp(60px, 8vw, 90px);
+}
+.secret-card {
+  position: relative;
+  background: var(--paper);
+  border: 1px solid rgba(184, 149, 74, 0.22);
+  border-radius: 18px;
+  padding: 28px 26px 24px;
+  transition: transform 0.5s var(--ease-out), box-shadow 0.5s var(--ease), border-color 0.4s var(--ease);
+  box-shadow: var(--shadow-1);
+  overflow: hidden;
+}
+.secret-card::before {
+  content: '';
+  position: absolute;
+  top: 0; right: 0;
+  width: 120px; height: 120px;
+  background: radial-gradient(circle at top right, rgba(184, 149, 74, 0.14), transparent 70%);
+  pointer-events: none;
+}
+.secret-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--gold);
+  box-shadow: var(--shadow-2);
+}
+.secret-featured {
+  grid-column: span 2;
+  background: linear-gradient(135deg, var(--paper-cool), var(--mint-mist));
+  border-color: var(--gold);
+  box-shadow: var(--shadow-gold);
+}
+.secret-num {
+  font-family: var(--font-display);
+  font-size: 2.4rem;
+  font-weight: 500;
+  line-height: 1;
+  color: var(--gold);
+  margin-bottom: 12px;
+  letter-spacing: -0.02em;
+  opacity: 0.7;
+}
+.secret-featured .secret-num {
+  color: var(--gold-deep);
+  opacity: 1;
+  font-size: 3rem;
+}
+.secret-body { position: relative; }
+.secret-tags {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+.secret-tag {
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  background: var(--gold-mist);
+  color: var(--gold-deep);
+  border-radius: 999px;
+  border: 1px solid rgba(184, 149, 74, 0.3);
+}
+.secret-featured .secret-tag {
+  background: linear-gradient(135deg, var(--gold), var(--gold-deep));
+  color: var(--paper);
+  border-color: var(--gold-deep);
+}
+.secret-tag-cost {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--vermilion);
+  font-weight: 500;
+}
+.secret-card h3 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 1.25rem;
+  line-height: 1.2;
+  color: var(--jade-deep);
+  margin-bottom: 4px;
+  letter-spacing: -0.01em;
+}
+.secret-featured h3 { font-size: 1.6rem; }
+.secret-cn {
+  font-family: var(--font-cn);
+  font-size: 0.85rem;
+  color: var(--gold);
+  margin-bottom: 14px;
+  letter-spacing: 0.04em;
+}
+.secret-card p:not(.secret-cn) {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--ink-soft);
+  margin-bottom: 16px;
+}
+.secret-card em {
+  font-family: var(--font-display);
+  font-style: italic;
+  color: var(--vermilion);
+}
+.secret-card strong {
+  color: var(--jade-deep);
+  font-weight: 600;
+}
+.secret-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  padding: 12px 0;
+  border-top: 1px dashed rgba(184, 149, 74, 0.25);
+  margin-bottom: 12px;
+}
+.secret-meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  color: var(--ink-mute);
+}
+.secret-meta svg { width: 14px; height: 14px; color: var(--gold-deep); }
+.secret-link {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  color: var(--gold-deep);
+  letter-spacing: 0.04em;
+  padding-bottom: 2px;
+  border-bottom: 1px solid transparent;
+  transition: gap 0.3s var(--ease), color 0.3s var(--ease), border-color 0.3s var(--ease);
+}
+.secret-link:hover {
+  color: var(--vermilion);
+  border-bottom-color: var(--vermilion);
+}
+
+/* Subsection lede */
+.subsection-lede {
+  text-align: center;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.05rem;
+  color: var(--ink-mute);
+  margin-bottom: clamp(32px, 4vw, 48px);
+  margin-top: -16px;
+}
+
+/* ================================================================
+   BACKUP RESTAURANTS
+   ================================================================ */
+.backup-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 14px;
+}
+.backup-card {
+  position: relative;
+  background: linear-gradient(180deg, var(--paper), var(--paper-cool));
+  border: 1px solid rgba(184, 149, 74, 0.22);
+  border-radius: 14px;
+  padding: 20px 22px 18px;
+  transition: transform 0.4s var(--ease-out), box-shadow 0.4s var(--ease), border-color 0.3s var(--ease);
+  box-shadow: var(--shadow-1);
+}
+.backup-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--gold);
+  box-shadow: var(--shadow-2);
+}
+.backup-rating {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--gold-deep);
+  background: var(--gold-mist);
+  padding: 3px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(184, 149, 74, 0.32);
+}
+.backup-card h4 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 1.1rem;
+  color: var(--jade-deep);
+  margin-bottom: 4px;
+  line-height: 1.3;
+  padding-right: 60px;
+}
+.backup-card h4 span {
+  font-family: var(--font-cn);
+  font-weight: 400;
+  font-size: 0.72em;
+  color: var(--gold);
+  margin-left: 6px;
+}
+.backup-type {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  margin-bottom: 10px !important;
+}
+.backup-card p:not(.backup-type) {
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: var(--ink-soft);
+  margin-bottom: 12px;
+}
+.backup-card a {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  color: var(--gold-deep);
+  letter-spacing: 0.04em;
+  border-bottom: 1px solid transparent;
+  padding-bottom: 1px;
+  transition: border-color 0.3s var(--ease), color 0.3s var(--ease);
+}
+.backup-card a:hover {
+  color: var(--vermilion);
+  border-bottom-color: var(--vermilion);
+}
+
+/* ================================================================
    PLACE ACTIONS (Story btn + Map link row)
    ================================================================ */
 .place-actions {
@@ -2965,6 +3202,8 @@ body.modal-open { overflow: hidden; }
   .tips-grid { grid-template-columns: 1fr; }
   .hotels-grid { grid-template-columns: 1fr; }
   .moto-tips-grid { grid-template-columns: repeat(2, 1fr); }
+  .secret-grid { grid-template-columns: repeat(2, 1fr); }
+  .secret-featured { grid-column: span 2; }
 }
 
 @media (max-width: 720px) {
@@ -3299,6 +3538,33 @@ body.modal-open { overflow: hidden; }
   .moto-tip strong { font-size: 0.92rem; }
   .moto-tip p { font-size: 12px; }
   .moto-hashtag { font-size: 0.7rem; padding-top: 16px; letter-spacing: 0.06em; }
+
+  /* Secret spots */
+  .secret-grid { grid-template-columns: 1fr; gap: 12px; margin-bottom: 40px; }
+  .secret-card { padding: 22px 20px 18px; border-radius: 14px; }
+  .secret-featured { grid-column: span 1; }
+  .secret-num { font-size: 1.8rem; margin-bottom: 8px; }
+  .secret-featured .secret-num { font-size: 2.2rem; }
+  .secret-card h3 { font-size: 1.1rem; }
+  .secret-featured h3 { font-size: 1.3rem; }
+  .secret-cn { font-size: 0.78rem; margin-bottom: 10px; }
+  .secret-card p:not(.secret-cn) { font-size: 13px; line-height: 1.55; margin-bottom: 12px; }
+  .secret-meta { gap: 10px; padding: 10px 0; }
+  .secret-meta span { font-size: 0.68rem; }
+  .secret-meta svg { width: 12px; height: 12px; }
+  .secret-tags { margin-bottom: 10px; }
+  .secret-tag { font-size: 0.58rem; padding: 3px 8px; }
+
+  /* Backup */
+  .backup-grid { grid-template-columns: 1fr; gap: 10px; }
+  .backup-card { padding: 16px 18px 14px; border-radius: 12px; }
+  .backup-rating { top: 12px; right: 14px; font-size: 0.7rem; padding: 2px 8px; }
+  .backup-card h4 { font-size: 0.98rem; padding-right: 55px; }
+  .backup-type { font-size: 0.62rem; margin-bottom: 8px !important; }
+  .backup-card p:not(.backup-type) { font-size: 13px; line-height: 1.55; margin-bottom: 8px; }
+  .backup-card a { font-size: 0.68rem; }
+
+  .subsection-lede { font-size: 0.92rem; margin-top: -8px; margin-bottom: 24px; }
 }
 
 @media (max-width: 380px) {

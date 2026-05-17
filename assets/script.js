@@ -180,6 +180,23 @@ const STORIES = {
       <span class="pullquote">กำแพงเมืองและประตูเดิมถูกรื้อในปี 1927 — แต่ความเป็นใจกลางของฉงชิ่งไม่เคยหายไป</span>
       <p>ทุกวันตรุษจีน คนท้องถิ่นยังคงมารวมตัวที่นี่เพื่อชมพระอาทิตย์ขึ้นวันแรกของปีสะท้อนบนแม่น้ำทั้งสอง — ประเพณีที่สืบต่อมาตั้งแต่ราชวงศ์โบราณ</p>`
   },
+  yikeshu: {
+    title: 'Yikeshu Observation Deck',
+    titleCn: '一棵树观景台 · "ต้นไม้เดี่ยว"',
+    stamp: '观', era: '1950s · เคยอยู่ในธนบัตร 5 หยวน',
+    image: 'assets/images/rs_skyline.jpg',
+    map: 'https://www.google.com/maps/search/?api=1&query=Yikeshu+Viewpoint+Nanshan+Chongqing',
+    facts: [
+      ['Ticket', '20¥'], ['Hours', '08:00 – 22:00'],
+      ['Elevation', '443 ม. บน Nanshan'], ['Rating', '★ 4.6 Google']
+    ],
+    text: `
+      <p>"<strong>Yikeshu</strong>" (一棵树 — "ต้นไม้เดี่ยว") เป็นจุดชมวิวสูงสุดของ Nanshan ที่ระดับ 443 เมตร — ชื่อมาจากต้นยางใหญ่ต้นเดียวที่ยืนอยู่ตรงนั้นมาเกือบ 100 ปี · เป็นจุดที่คนเฉิ่งฉิ่งยกให้ <em>"ดีกว่า Crystal Skybridge ที่เสีย 188¥"</em></p>
+      <p>ที่นี่เคยปรากฏใน <strong>ธนบัตร 5 หยวนยุค 1980s</strong> ของจีน — รูปวาดของวิวจาก Yikeshu ลงไปยังคาบสมุทร Yuzhong เป็นภาพ Iconic ที่ทุกคนจีนรู้จัก</p>
+      <span class="pullquote">ในเย็นชัดเจน เห็น Hongyadong, Raffles, Liziba Bridge, ท่า Chaotianmen ทั้งหมดในเฟรมเดียว</span>
+      <p>การเดินทาง: <strong>DiDi 25¥ จาก Jiefangbei</strong> 25 นาที · หรือนั่ง Bus 384 ลง Yikeshu Station · มี Cable Car เล็ก ๆ ขึ้นจากเชิงเขาราคา 30¥ · ค่าเข้าเพียง 20¥ คุ้มที่สุดในเมือง</p>
+      <p><strong>ทริค:</strong> มาก่อน Sunset 45 นาที จะได้จุดถ่ายภาพดีก่อนทัวร์จีนมา · ใกล้ ๆ มี Pipa Garden Hotpot หม้อไฟใหญ่ที่สุดในโลก เดิน 10 นาทีไปดินเนอร์ต่อได้</p>`
+  },
   angela: {
     title: 'Angela · Angel Homestay',
     titleCn: '高层江景民宿 · Jiefangbei Hongyadong Branch',
